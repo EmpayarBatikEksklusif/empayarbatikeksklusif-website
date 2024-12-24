@@ -11,9 +11,15 @@
 </head>
 <body>
     <img src="LOGO EBE/header photo.png" alt="HEADER LOGO" class="header-photo">
+    
     <!-- Header -->
     <header>
-        <nav>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <nav id="nav-menu">
             <a href="index.html">HOME</a>
             <a href="profile.html">ABOUT US</a>
             <div class="dropdown">
@@ -54,11 +60,10 @@
                 </div>
             </div>
             
-
-            <!-- Paragraphs -->
+            <!-- Text Content -->
             <div class="text-content">
                 <h3>About Our Batik</h3>
-                <p>Empayar Batik Exclusive is a renowned batik store located in Kota Bharu, Kelantan. 
+                <p>Empayar Batik Exclusive is a renowned batik store located in Kota Bharu, Kelantan.</p>
                 <p>We offer a variety of high-quality batik and other fashion products such as baju kurung,</p>
                 <p>kaftans, shirts, and fabric.</p>
                 <p>Established on October 2, 2015, Empayar Batik Exclusive has grown rapidly and is now a</p>
@@ -83,9 +88,17 @@
         <p>&copy; 2024 Empayar Batik Exclusive. All rights reserved.</p>
     </footer>
     
-      
-    
+    <!-- Scripts -->
     <script>
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Swiper Initialization
         var swiper = new Swiper('.swiper-container', {
             slidesPerView: 1,
             spaceBetween: 10,
@@ -100,8 +113,8 @@
             },
         });
 
-                // JavaScript to make header sticky after scrolling past the header photo
-                window.onscroll = function() {
+        // Sticky Header
+        window.onscroll = function() {
             stickyHeader();
         };
 
