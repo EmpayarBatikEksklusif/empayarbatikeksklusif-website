@@ -216,6 +216,86 @@ main h3 {
     margin: 10px 0;
 }
 
+.contact-main {
+    text-align: left; /* To align text items inside correctly */
+    position: absolute; /* Make it relative to the page layout */
+    margin-top: 5%;
+    right: 0; /* Push to the far right */
+    margin-right: 15%; /* Optional: Adjust margin if necessary */
+    width: 25%; /* Adjust width based on your design */
+}
+
+.contact-main h2{
+    color: #bf9e32;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px; /* Spacing between items */
+}
+ 
+.logo-img {
+    width: 40px; /* Adjust image size */
+    height: auto;
+    margin-right: 10px;
+}
+
+/* Contact Item Image Styling */
+.text-overlay .contact-item img {
+    width: 80px;
+    height: auto;
+    margin-right: 15px;
+    border-radius: 50%;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+}
+
+
+.contact-item p {
+    margin: 0;
+    font-size: 1.1rem; /* Text size */
+}
+
+.contact-item a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Hover effect for links */
+.contact-item a:hover {
+    color: #bf9e32;
+    transform: scale(1.1); /* Makes the text a bit bigger */
+    text-decoration: underline; /* Adds an underline */
+}
+
+.contact-item a:hover {
+    color: #bf9e32;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .contact-item {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: right;
+    }
+
+    .contact-item img {
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width: 768px) {
+    .contact-main {
+        /* Right-align only for larger screens */
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 25%;
+    }
+}
+
 .content-wrapper {
     display: flex;
     justify-content: space-between;
@@ -339,6 +419,41 @@ footer .linktree-logo {
     }
 }
 
+/* Additional Styling */
+.animated-text {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #aa8c2c;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s steps(35, end) infinite, blink-cursor 0.75s step-end infinite;
+    max-width: 35ch;
+    margin-top: 50px;
+}
+
+@keyframes typing {
+    0% { width: 0; }
+    100% { width: 35ch; }
+}
+
+@keyframes blink-cursor {
+    50% { border-color: transparent; }
+    100% { border-color: #aa8c2c; }
+}
+
+/* Animations for Main Text */
+@keyframes fadeInText {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Apply animation to text content */
+.text-content p, .fade-in-special {
+    animation: fadeInText 1.5s ease-in-out forwards;
+    animation-delay: 0.5s; /* Slight delay for smoother effect */
+}
+
 /* Swiper Slider Styling */
 .swiper-container {
     position: relative;
@@ -423,54 +538,21 @@ footer .linktree-logo {
 .text-overlay {
     position: absolute;
     top: 50%;
-    right: 5%;
-    transform: translateY(-50%);
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(255, 255, 255, 0); /* Slight background to improve readability */
     padding: 20px;
-    max-width: 600px;
-    border-radius: 8px;
-    font-family: Arial, sans-serif;
+    border-radius: 10px;
+    max-width: 600px; /* Ensures text and logos fit nicely */
+    width: 90%; /* Responsive width */
 }
 
 .text-overlay h2 {
-    font-size: 2.0em;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #e5ad3d;
-}
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #bf9e32;
 
-.text-overlay a {
-    color: #000000; /* Set the text color */
-    text-decoration: none; /* Remove the underline */
-    font-family: Arial, sans-serif; /* Use Arial font for a clean look */
-    font-size: 1em; /* Adjust the font size if needed */
-    font-weight: normal; /* Ensure the text is not bold */
-}
-
-.text-overlay a:hover {
-    color: #e5ad3d; /* Gold color on hover */
-    text-decoration: underline; /* Add an underline on hover */
-    transition: color 0.3s ease; /* Smooth color transition */
-}
-
-.contact-item {
-    display: flex; /* Align items in a row */
-    align-items: center; /* Vertically center the logo and text */
-    margin-bottom: 10px; /* Add spacing between items */
-}
-
-.contact-item img {
-    width: 50px; /* Adjust the size of the logo */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 15px; /* Add spacing between the logo and text */
-}
-
-.contact-item p {
-    margin: 0; /* Remove default paragraph margin */
-    font-size: 1.2em; /* Match paragraph font size */
-    line-height: 1.6; /* Improve text readability */
-    text-align: left; /* Justify text to the left */
 }
 
 
@@ -504,4 +586,13 @@ footer .linktree-logo {
 
 .linktree-logo:hover {
     transform: scale(1.1); /* Slight zoom-in effect on hover */
+}
+
+/* Adjust the space between paragraphs */
+.space {
+    height: 200px; /* Adjust the height as needed */
+}
+
+.space2 {
+    height: 30px; /* Adjust the height as needed */
 }
