@@ -60,23 +60,32 @@
     </footer>
     
 
-    <script>
-        // JavaScript to make header sticky after scrolling past the header photo
-        window.onscroll = function() {
-    stickyHeader();
-};
+<script>
+    // JavaScript to make header sticky after scrolling past the header photo
+    window.onscroll = function() {
+        stickyHeader();
+    };
 
-var header = document.querySelector('header');
-var sticky = header.offsetTop;
+    var header = document.querySelector('header');
+    var sticky = header.offsetTop;
 
-function stickyHeader() {
-    if (window.pageYOffset > sticky) {
-        header.classList.add("fixed-header");
-    } else {
-        header.classList.remove("fixed-header");
+    function stickyHeader() {
+        if (window.pageYOffset > sticky) {
+            header.classList.add("fixed-header");
+        } else {
+            header.classList.remove("fixed-header");
+        }
     }
-}
 
-    </script>
+    // JavaScript for mobile menu toggle
+    const mobileMenu = document.getElementById("mobile-menu");
+    const navMenu = document.getElementById("nav-menu");
+
+    // Ensure the mobile menu works by toggling 'active' class
+    mobileMenu.addEventListener("click", function() {
+        navMenu.classList.toggle("active");
+    });
+
+</script>
 </body>
 </html>
