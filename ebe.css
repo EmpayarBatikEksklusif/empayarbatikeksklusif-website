@@ -33,10 +33,20 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
     background-color: black;
+    z-index: 1000;
     transform: translateY(0);
 }
+
+/* Header Photo Styling */
+.header-photo {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background-color: black;
+    margin-top: 0;
+}
+
 
 header:not(.fixed-header) {
     transform: translateY(0);
@@ -49,15 +59,6 @@ header:not(.fixed-header) {
     display: block;
 }
 
-/* Header Photo Styling */
-.header-photo {
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-    background-color: black;
-    margin-top: 0;
-}
-
 /* Mobile Menu Toggle */
 .menu-toggle {
     display: none;
@@ -68,7 +69,7 @@ header:not(.fixed-header) {
 
 .menu-toggle .bar {
     background-color: #bf9e32;
-    height: 4px;
+    height: 10px;
     width: 25px;
     margin: 3px 0;
     border-radius: 3px;
@@ -86,6 +87,8 @@ nav a {
     margin: 0 10px;
     text-decoration: none;
     color: #bf9e32;
+    font-size: 19px;
+    margin-right: 20px;
 }
 
 #nav-menu {
@@ -98,21 +101,24 @@ nav a {
 }
 
 
-#nav-menu.active {
-    display: block;
-}
-
+/* Mobile Navigation */
 @media (max-width: 768px) {
     .menu-toggle {
         display: flex;
+        position: absolute; /* Absolute position to place it on the left */
+        left: 10px;  /* Adjust the distance from the left edge */
+        top: 10px;   /* Optional: Adjust the distance from the top edge */
     }
+
     #nav-menu {
-        display: none;
+        display: none;  /* Initially hidden on mobile */
         flex-direction: column;
         text-align: center;
+        width: 100%;  /* Ensure the menu takes up full width */
     }
+
     #nav-menu.active {
-        display: flex;
+        display: flex;  /* Show when the 'active' class is added */
     }
 }
 
@@ -217,82 +223,115 @@ main h3 {
 }
 
 .contact-main {
-    text-align: left; /* To align text items inside correctly */
-    position: absolute; /* Make it relative to the page layout */
-    margin-top: 5%;
-    right: 0; /* Push to the far right */
-    margin-right: 15%; /* Optional: Adjust margin if necessary */
-    width: 25%; /* Adjust width based on your design */
-}
-
-.contact-main h2{
-    color: #bf9e32;
-}
-
-.contact-item {
+    flex: 1; /* Ensures it takes the same flex behavior as text-content */
+    max-width: 48%; /* Matches the width of text-content */
     display: flex;
-    align-items: center;
-    margin-bottom: 15px; /* Spacing between items */
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
+    margin-left: 22%; /* Matches the left margin of text-content */
+    margin-bottom: 0; /* Aligns bottom margin */
+    font-size: 1.1em; /* Matches font size of text-content */
+    color: black; /* Matches text-content color */
 }
- 
+
+.contact-main h2 {
+    color: #bf9e32; /* Use consistent styling */
+    margin-bottom: 10px; /* Add spacing */
+}
+
+.contact-main p {
+    margin: 10px 0; /* Spacing between paragraphs */
+    line-height: 1.8; /* Matches general text-content */
+}
+
 .logo-img {
     width: 40px; /* Adjust image size */
     height: auto;
     margin-right: 10px;
 }
 
-/* Contact Item Image Styling */
-.text-overlay .contact-item img {
-    width: 80px;
-    height: auto;
-    margin-right: 15px;
-    border-radius: 50%;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+.contact-info {
+    color: #bf9e32; /* Use consistent styling */
+    width: 400px; /* Sets the width of the contact section */
+    padding-left: 60px;
+    padding-right: 60px;
+    background-color: #ffffff86; /* Sets a white background color */
+    border-radius: 8px; /* Rounds the corners with an 8px radius */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Adds a soft shadow around the section for a subtle 3D effect */
+    position: absolute; /* Allows it to be positioned freely */
+    right: 0; /* Aligns the box to the right side */
+    margin-right: 10%; /* Adds space on the right */
+    top: 60%; /* Centers the box vertically */
+    margin-top: -5%;
+    transform: translateY(-50%); /* Adjusts the vertical position to truly center it */
 }
 
 
+/* Contact item flexbox */
+.contact-item {
+    display: flex;
+    flex-direction: row;  /* Arrange items in a row by default */
+    align-items: center;  /* Vertically align image and text */
+    gap: 10px;  /* Space between image and text */
+    justify-content: flex-start;  /* Align to the left */
+    text-align: left;  /* Force text to align left */
+    margin-bottom: 20px;
+}
+
+/* Contact item image */
+.contact-item img {
+    max-width: 40px;  /* Set image width */
+    height: auto;
+}
+
+/* Contact item text and link */
 .contact-item p {
     margin: 0;
-    font-size: 1.1rem; /* Text size */
+    flex-grow: 1;  /* Allow the text to take the available space */
+    white-space: normal;  /* Allow the text to wrap */
+    text-align: left;  /* Force text inside to be left-aligned */
 }
 
+/* Contact item link */
 .contact-item a {
+    color: #000000;
     text-decoration: none;
-    color: #333;
-}
-
-/* Hover effect for links */
-.contact-item a:hover {
-    color: #bf9e32;
-    transform: scale(1.1); /* Makes the text a bit bigger */
-    text-decoration: underline; /* Adds an underline */
+    font-size: 18px;          /* Adjust font size for smaller screens */
 }
 
 .contact-item a:hover {
     color: #bf9e32;
+    transform: scale(1.1);
+    text-decoration: underline;
 }
 
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
+/* Apply background image only to contact page */
+.contact-page main {
+    background-image: url('img contact/contact.png'); /* Replace with your image path */
+    background-size: cover;   /* Ensure the image covers the entire area */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    min-height: 80vh;  /* Make sure the background covers the entire height of the viewport */
+    padding: 20px; /* Optional, for spacing inside the main content */
+}
+
+
+/* Mobile Styles */
+@media screen and (max-width: 600px) {
     .contact-item {
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: right;
+        flex-direction: column;   /* Stack items vertically */
+        align-items: flex-start;  /* Align to the left */
+        text-align: left;         /* Ensure text is left-aligned */
+        font-size: 14px;          /* Adjust font size for smaller screens */
     }
 
     .contact-item img {
-        margin-bottom: 10px;
+        margin-bottom: 10px;      /* Add space below the image */
     }
-}
 
-@media (min-width: 768px) {
-    .contact-main {
-        /* Right-align only for larger screens */
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 25%;
+    .contact-item p {
+        margin: 0;
+        text-align: left;         /* Ensure text inside the p tag is left-aligned */
     }
 }
 
@@ -341,6 +380,7 @@ main h3 {
 .text-content p:last-child {
     margin-bottom: 150px;
 }
+
 
 /* Footer Styling */
 footer {
@@ -429,7 +469,7 @@ footer .linktree-logo {
     overflow: hidden;
     animation: typing 4s steps(35, end) infinite, blink-cursor 0.75s step-end infinite;
     max-width: 35ch;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 @keyframes typing {
@@ -586,13 +626,4 @@ footer .linktree-logo {
 
 .linktree-logo:hover {
     transform: scale(1.1); /* Slight zoom-in effect on hover */
-}
-
-/* Adjust the space between paragraphs */
-.space {
-    height: 200px; /* Adjust the height as needed */
-}
-
-.space2 {
-    height: 30px; /* Adjust the height as needed */
 }
