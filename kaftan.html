@@ -11,10 +11,15 @@
 <body>
     <!-- Header -->
     <header>
-        <nav>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <nav id="nav-menu">
             <a href="index.html" class="logo-link">
-                <img src="LOGO EBE/iconebe.png" alt="HEADER LOGO" class="header-img">
-            </a>            
+                <img src="LOGO%20EBE/iconebe.png" alt="HEADER LOGO" class="header-img">
+            </a>           
             <a href="index.html">HOME</a>
             <a href="profile.html">ABOUT US</a>
             <div class="dropdown">
@@ -72,9 +77,6 @@
                 <P>Estimated chest measurement 56 - 58 Inch</p>
                 <p>Estimated waist measurement 56 - 58 Inch</p>
                 <div class="space"></div>
-
-
-
             </div>
                    <!-- <h4 class="photo-description">Soft Pastel Shades for Every Occasion</h4> -->
             <div class="photo-box2">
@@ -145,9 +147,15 @@
                 header.classList.remove("fixed-header");
             }
         }
+
+        // JavaScript for mobile menu toggle
+        const mobileMenu = document.getElementById("mobile-menu");
+        const navMenu = document.getElementById("nav-menu");
+
+        // Ensure the mobile menu works by toggling 'active' class
+        mobileMenu.addEventListener("click", function() {
+            navMenu.classList.toggle("active");
+        });
     </script>
 </body>
 </html>
-
-
-
