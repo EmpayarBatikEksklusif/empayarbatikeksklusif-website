@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Empayar Batik Exclusive</title>
+    <link rel="icon" type="image/PNG" sizes="32x32" href="logo-ebe/iconebe.PNg">
     <link rel="stylesheet" href="ebe.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
+
 <body>
     <!-- Header -->
     <header>
@@ -88,9 +90,10 @@
             <div class="photo-box2">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="img kaftan/pastel 1.jpg" alt="Image 1"></div>
-                        <div class="swiper-slide"><img src="img kaftan/pastel 2.jpg" alt="Image 2"></div>
-                        <div class="swiper-slide"><img src="img kaftan/pastel 3.jpg" alt="Image 3"></div>
+                        <div class="swiper-slide"><img src="img kaftan/pastel.jpg" alt="Image 1"></div>
+                        <div class="swiper-slide"><img src="img kaftan/pastel 1.jpg" alt="Image 2"></div>
+                        <div class="swiper-slide"><img src="img kaftan/pastel 2.jpg" alt="Image 3"></div>
+                        <div class="swiper-slide"><img src="img kaftan/pastel 3.jpg" alt="Image 4"></div>
                     </div>
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
@@ -158,7 +161,7 @@
         const mobileMenu = document.getElementById("mobile-menu");
         const navMenu = document.getElementById("nav-menu");
 
-        // Ensure the mobile menu works by toggling 'active' class
+        // Toggle the 'active' class to show/hide the nav menu
         mobileMenu.addEventListener("click", function() {
             navMenu.classList.toggle("active");
         });
