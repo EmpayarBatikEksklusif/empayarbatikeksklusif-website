@@ -18,7 +18,7 @@
         <nav id="nav-menu">
             <a href="index.html" class="logo-link">
                 <img src="logo-ebe/iconebe.png" alt="HEADER LOGO" class="header-img">
-            </a>
+            </a>                     
             <a href="index.html">HOME</a>
             <a href="profile.html">ABOUT US</a>
             <div class="dropdown">
@@ -59,31 +59,33 @@
         <p>&copy; 2024 Empayar Batik Exclusive. All rights reserved.</p>
     </footer>
     
-        <script>
-            // JavaScript to make header sticky after scrolling past the header photo
-            window.onscroll = function() {
-                stickyHeader();
-            };
-        
-            var header = document.querySelector('header');
-            var sticky = header.offsetTop;
-        
-            function stickyHeader() {
-                if (window.pageYOffset > sticky) {
-                    header.classList.add("fixed-header");
-                } else {
-                    header.classList.remove("fixed-header");
-                }
+
+    <script>
+        // JavaScript to make header sticky after scrolling past the header photo
+        window.onscroll = function() {
+            stickyHeader();
+        };
+
+        var header = document.querySelector('header');
+        var sticky = header.offsetTop;
+
+        function stickyHeader() {
+            if (window.pageYOffset > sticky) {
+                header.classList.add("fixed-header");
+            } else {
+                header.classList.remove("fixed-header");
             }
-        
-            // JavaScript for mobile menu toggle
-            const mobileMenu = document.getElementById("mobile-menu");
-            const navMenu = document.getElementById("nav-menu");
-        
-            // Ensure the mobile menu works by toggling 'active' class
-            mobileMenu.addEventListener("click", function() {
-                navMenu.classList.toggle("active");
-            });
-        </script>
-    </body>
+        }
+
+        // JavaScript for mobile menu toggle
+        const mobileMenu = document.getElementById("mobile-menu");
+        const navMenu = document.getElementById("nav-menu");
+
+        // Ensure the mobile menu works by toggling 'active' class
+        mobileMenu.addEventListener("click", function() {
+            navMenu.classList.toggle("active");
+        });
+
+    </script>
+</body>
 </html>
