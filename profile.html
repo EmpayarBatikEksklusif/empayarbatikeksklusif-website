@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Empayar Batik Exclusive</title>
+    <link rel="icon" type="image/PNG" sizes="32x32" href="logo-ebe/iconebe.PNg">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="ebe.css">
 </head>
@@ -43,15 +44,15 @@
             <a href="contact.html">CONTACT US</a>
         </nav>
     </header>
-
+    
     <main>
         <div class="full-width-images">
-            <img src="img profile/1.png" alt="Photo 1">
-            <img src="img profile/2.png" alt="Photo 2">
-            <img src="img profile/3.png" alt="Photo 3">
-            <img src="img profile/4.png" alt="Photo 4">
+            <img src="img profile/1.png" alt="Photo 1" class="fade-in">
+            <img src="img profile/2.png" alt="Photo 2" class="fade-in">
+            <img src="img profile/3.png" alt="Photo 3" class="fade-in">
+            <img src="img profile/4.png" alt="Photo 4" class="fade-in">
         </div>    
-    </main>
+    </main>    
     
     <footer>
         <div>
@@ -86,11 +87,30 @@
         const mobileMenu = document.getElementById("mobile-menu");
         const navMenu = document.getElementById("nav-menu");
 
-        // Ensure the mobile menu works by toggling 'active' class
+        // Toggle the 'active' class to show/hide the nav menu
         mobileMenu.addEventListener("click", function() {
             navMenu.classList.toggle("active");
         });
 
+                document.addEventListener("DOMContentLoaded", () => {
+            const images = document.querySelectorAll(".fade-in");
+
+            const observerOptions = {
+                root: null, // Viewport as the root
+                threshold: 0.1, // Trigger when 10% of the image is visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible"); // Add visible class
+                        observer.unobserve(entry.target); // Stop observing once visible
+                    }
+                });
+            }, observerOptions);
+
+            images.forEach(image => observer.observe(image));
+        });
     </script>
 </body>
 </html>
