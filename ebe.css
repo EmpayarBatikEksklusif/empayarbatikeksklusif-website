@@ -100,9 +100,13 @@ nav a {
     font-weight: bold; /* Make text bold */
 }
 
-
 /* Mobile Navigation */
 @media (max-width: 768px) {
+    /* Hide logo link on mobile */
+    .logo-link {
+        display: none !important; /* Ensure it is not displayed */
+    }
+    
     .menu-toggle {
         display: flex;
         position: absolute; /* Absolute position to place it on the left */
@@ -121,7 +125,6 @@ nav a {
         display: flex;  /* Show when the 'active' class is added */
     }
 }
-
 
 nav a:hover {
     color: white;
@@ -396,7 +399,6 @@ main h3 {
         padding-right: 20px; /* Optional: Add padding on the right */
     }
 }
-
 
 .content-wrapper {
     display: flex;
