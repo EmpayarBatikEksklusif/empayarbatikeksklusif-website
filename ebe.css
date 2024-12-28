@@ -1,7 +1,7 @@
 /* General Styling */
 body {
     font-family: 'Times New Roman', serif;
-    background-color: white;
+    background-color: white !important;
     color: black;
     margin: 0;
     padding: 0;
@@ -47,7 +47,6 @@ header {
     margin-top: 0;
 }
 
-
 header:not(.fixed-header) {
     transform: translateY(0);
 }
@@ -57,6 +56,19 @@ header:not(.fixed-header) {
     width: 100px;
     height: auto;
     display: block;
+}
+
+/* Styling for the logo placed between ABOUT US and PRODUCTS & SERVICES */
+.logo-between {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-image {
+    width: 150px; /* Adjust width as needed */
+    height: auto;
+    margin: 0; /* Adds spacing around the logo */
 }
 
 /* Mobile Menu Toggle */
@@ -83,7 +95,7 @@ nav {
     flex-wrap: wrap;
 }
 
-nav a {
+#nav-menu a {
     margin: 0 10px;
     text-decoration: none;
     color: #bf9e32;
@@ -96,17 +108,21 @@ nav a {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    font-size: 16px; /* Adjust font size here */
-    font-weight: bold; /* Make text bold */
+    font-size: 16px;
+    font-weight: bold;
 }
 
 /* Mobile Navigation */
-@media (max-width: 768px) {
-    /* Hide logo link on mobile */
-    .logo-link {
-        display: none !important; /* Ensure it is not displayed */
+@media (max-width: 700px) {
+    .logo-image {
+        display: block; /* Keeps it as a block element */
+        max-width: 0;   /* Prevents the image from taking up space */
+        overflow: hidden; /* Hides the image content */
     }
-    
+    /* Hide logo link on mobile
+    .logo-link {
+        display: none !important; /* Ensure it is not displayed
+    }*/
     .menu-toggle {
         display: flex;
         position: absolute; /* Absolute position to place it on the left */
@@ -123,6 +139,14 @@ nav a {
 
     #nav-menu.active {
         display: flex;  /* Show when the 'active' class is added */
+    }
+    
+    #nav-menu a {
+        text-decoration: none;
+        color: #bf9e32;
+        font-size: 14px;
+        margin-right: 20px;
+        font-weight: normal;
     }
 }
 
@@ -149,13 +173,11 @@ nav a:hover {
     position: relative;
     display: inline-block;
     font-size: 16px; /* Adjust font size here */
-    font-weight: bold; /* Make text bold */
 }
 
 .dropdown .dropbtn {
     color: #bf9e32;
     font-size: 1.2em;
-    font-weight: bold;
     padding: 10px 15px;
     background-color: black;
     border: none;
@@ -171,13 +193,13 @@ nav a:hover {
 .dropdown-content {
     position: absolute;
     background-color: rgba(37, 37, 37, 0.892);
-    min-width: 160px;
+    min-width: 200px;
     z-index: 1;
-    left: 30px;
+    left: -15px;
     visibility: hidden;
     opacity: 0;
     transform: translateY(-10px);
-    transition: visibility 0s 0.3s, opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.4s ease, transform 0.4s ease; /* Make transition smoother */
 }
 
 .dropdown-content a {
@@ -186,6 +208,7 @@ nav a:hover {
     text-decoration: none;
     display: block;
     font-size: 1.1em;
+    font-weight: normal;
 }
 
 .dropdown-content a:hover {
@@ -197,7 +220,7 @@ nav a:hover {
     visibility: visible;
     opacity: 1;
     transform: translateY(0);
-    transition: visibility 0s, opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.4s ease, transform 0.4s ease; /* Ensure smoother transition */
 }
 
 /* Main Content Styling */
@@ -354,7 +377,7 @@ main h3 {
 }
 
 /* Mobile Styles */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 700px) {
 
     .contact-page main {
         min-height: auto; /* Remove fixed height for mobile screens */
@@ -399,6 +422,7 @@ main h3 {
         padding-right: 20px; /* Optional: Add padding on the right */
     }
 }
+
 
 .content-wrapper {
     display: flex;
