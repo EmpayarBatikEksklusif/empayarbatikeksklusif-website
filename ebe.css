@@ -669,15 +669,14 @@ main h3 {
 
 }
 
-
+/* Full-width image styling */
 .full-width-images {
     position: relative;
-    padding: 0; /* Remove any padding */
+    padding: 0;
     margin: -30px;
-
+    margin-bottom: 0;
 }
 
-/* Full-width image itself */
 .full-width-images img {
     width: 100%;
     height: auto;
@@ -685,6 +684,17 @@ main h3 {
     margin: 0;
     padding: 0;
     border: none;
+
+    /* Default state: hidden */
+    opacity: 0;
+    transform: translateY(20px); /* Slightly move down for the effect */
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Fade-in effect when scrolled into view */
+.full-width-images img.visible {
+    opacity: 1;
+    transform: translateY(0); /* Reset position */
 }
 
 /* Footer Styling */
