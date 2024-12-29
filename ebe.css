@@ -397,13 +397,11 @@ main h3 {
     }
 
     .contact-info {
-        margin-top: 50%; /* Adds space at the top */
+        margin-top: 80%;
         margin-bottom: 0;
         padding-top: 20px;
-        width: 80%; /* Ensure it takes full width on smaller screens */
-        position: relative; /* Remove absolute positioning on mobile */
-        top: auto;
-        right: auto;
+        width: 80%;
+        position: relative;
     }
 
     .contact-item {
